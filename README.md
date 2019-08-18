@@ -1,19 +1,28 @@
 # Vigenere-Cipher
 
-Στο script μας δεχόμαστε από το χρήστη τρία inputs. Tη λειτουργία που θέλει να πραγματοποιήσει (encrypt/decrypt), τη λέξη και το κλειδί που θέλει να κρυπτογραφήσει (σε περίπτωση που επειλέξει να κάνει encrypt) ή την κρυπτογραφημένη λέξη και το κλειδί (σε περίπτωση που επιλέξει να κάνει decrypt).
-Upper Case Converter
-Σε περίπτωση που ο χρήστης έδωσε μήνυμα και κλειδί με πεζούς χαρακτήρες, το πρόγραμμα τα μετατρέπει σε κεφαλαία.
-Key Extension Operation
-Το πρόγραμμα συγκρίνει το μήκος της λέξης του χρήστη και το μήκος του κλειδιού που έδωσε και αν το κλειδί είναι μικρότερο το επεκτείνει ώστε να έχει το ίδιο μήκος με τη λέξη.
-Encrypt
-Σε αυτή την περίπτωση ο χρήστης δίνει τη λέξη που θέλει να κρυπτογραφήσει και το κλειδί. Καλείται η συνάρτηση encrypt() στην οποία γίνονται οι εξής λειτουργίες. Μετατρέπει κάθε χαρακτήρα της λέξης και του κλειδιού σε κώδικα ASCII και στη συνέχεια με τη χρήση της συνάρτησης encryptedMsg[i] = ((msg[i] + newKey[i]) % 26) + 'A' (η οποία είναι τροποποιημένη σε κώδικα ASCII) αντιστοιχίζει κάθε χαρακτήρα στον κατάλληλο χαρακτήρα του πίνακα Vigenere. Τέλος εμφανίζει το κρυπτογραφημένο μήνυμα.
-Decrypt
-Σε αυτή την περίπτωση ο χρήστης δίνει την κρυπτογραφημένη λέξη που θέλει να αποκρυπτογραφήσει και το κλειδί. Καλείται η συνάρτηση decrypt() στην οποία γίνονται οι εξής λειτουργίες. Μετατρέπει κάθε χαρακτήρα της λέξης και του
-κλειδιού σε κώδικα ASCII και στη συνέχεια με τη χρήση της συνάρτησης decryptedMsg[i] = (((encryptedMsg[i] - newKey[i]) + 26) % 26) + 'A' (η οποία είναι τροποποιημένη σε κώδικα ASCII) αντιστοιχίζει κάθε χαρακτήρα στον κατάλληλο χαρακτήρα του πίνακα Vigenere. Τέλος εμφανίζει το αποκρυπτογραφημένο μήνυμα.
-Είσοδος Χρήστη
-Ο τρόπος με τον οπόιο πρέπει ο χρήστης να δώσει τα δεδομένα του είναι ο εξής:
-Encrypt → -e ΛΕΞΗ_ΠΡΟΣ_ΚΡΥΠΤΟΓΡΑΦΗΣΗ ΚΛΕΙΔΙ
-Π.χ. -e HELLO KEK
-Decrypt → -d ΛΕΞΗ_ΠΡΟΣ_ΑΠΟΚΡΥΠΤΟΓΡΑΦΗΣΗ ΚΛΕΙΔΙ
-Π.χ. -d RIVVS KEK
-Σε κάθε άλλη περίπτωση (εκτός του -e ή -d) το πρόγραμμα θα ενημερώσει για λανθασμένη αίτηση εκτέλεσης λειτουργίας.
+In this script we get 3 inputs from the user.
+1.	The function which want to use (encryption or decryption)
+2.	The word which want to decrypt or encrypt 
+3.	The key
+
+In case of lower-case letters given by the user, the Upper-Case Converter convert those letters in upper case.
+
+Key Extension Operation is a function that compares the length of user’s word and key. If the key length is smaller than the word the function extends it in order to have the same length with the word.
+
+Encrypt function takes as an input the word that the user wants to encrypt and the key. Every character od the word and the key are converted into ASCCII code and every character is assigning to Vigenere Table characters. Finally, the encrypted message is shown up.
+
+Decrypt function users gives the encrypted word and the key. Every character of the word and the key is converted into ASCCII code and every character is assigning to Vigenere Table characters. Finally, the decrypted message is shown up.
+
+The only format user can give inputs to the program is
+1.	Encrypt:  -e WORD_TO_ENCRYPT KEY ex. HELLO KEK
+2.	Decrypt:  -d WORD_TO_DECRYPT KEY ex. RIVVS KEK
+
+
+
+
+
+
+
+
+
+
