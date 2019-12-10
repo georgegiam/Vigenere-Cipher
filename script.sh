@@ -72,7 +72,7 @@ then
   decrypt "encrypted" "key"
 fi
 
-if [ $action != "-e" ] && [ $action != "-d" ]
+if [[ $action != "-e" ]] && [[ $action != "-d" ]]
 then
   echo "Opperation $1 doesn't exist."
 fi
