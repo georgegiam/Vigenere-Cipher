@@ -1,28 +1,13 @@
-# Vigenere-Cipher
+First, we define 3 variables.
+1. message - The plaintext we want to decrypt or encrypt
+2. key - The key we use for encryption or decryption
+3. action - The function we want to use (encryption or decryption)
+In case of lower-case letters given, we convert the plaintext and the key in uppercase format, and we define their length.
 
-In this script we get 3 inputs from the user.
-1.	The function which want to use (encryption or decryption)
-2.	The word which want to decrypt or encrypt 
-3.	The key
+Next, we generate the extending key. We compare the length of the plaintext and the key. If the key length is less than the plaintext length, we extend it in order to have the same length with the plaintext.
 
-In case of lower-case letters given by the user, the Upper-Case Converter convert those letters in upper case.
+Encrypt function takes as input the plaintext we want to encrypt and the key. Every character in both plaintext and key converts into ASCCII code and every character is assigning to Vigenère Table characters. Finally, the encrypted message is shown up.
 
-Key Extension Operation is a function that compares the length of user’s word and key. If the key length is smaller than the word the function extends it in order to have the same length with the word.
+In Decrypt function we use the ciphertext we want to decrypt and the key. Every character of both ciphertext and key is converted into ASCCII code and every character is assigning to Vigenère Table characters. Finally, the decrypted message (plaintext) is shown up.
 
-Encrypt function takes as an input the word that the user wants to encrypt and the key. Every character od the word and the key are converted into ASCCII code and every character is assigning to Vigenere Table characters. Finally, the encrypted message is shown up.
-
-Decrypt function users gives the encrypted word and the key. Every character of the word and the key is converted into ASCCII code and every character is assigning to Vigenere Table characters. Finally, the decrypted message is shown up.
-
-The only format user can give inputs to the program is
-1.	Encrypt:  -e WORD_TO_ENCRYPT KEY ex. HELLO KEK
-2.	Decrypt:  -d WORD_TO_DECRYPT KEY ex. RIVVS KEK
-
-
-
-
-
-
-
-
-
-
+Finally we check which action we want to trigger (encryption or decryption).
